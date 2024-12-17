@@ -1,7 +1,6 @@
-import sqlite3
 from dataclasses import dataclass
 
-import asyncpg
+import asyncpg  # type: ignore
 
 
 @dataclass
@@ -10,6 +9,6 @@ class GEORepository:
 
     async def connect(self) -> None:
         self.connection = await asyncpg.connect(self.database_url)
-    
+
     async def disconnect(self) -> None:
         await self.connection.close()

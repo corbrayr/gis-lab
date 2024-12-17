@@ -1,0 +1,26 @@
+body .main-body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100px;
+}
+
+.input-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+.form-label {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#map {
+    height: 600px;
+    width: 80%;
+};
