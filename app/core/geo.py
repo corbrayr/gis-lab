@@ -5,6 +5,7 @@
 from dataclasses import dataclass, field
 import folium
 from folium import plugins
+from app.core.search import Coordinates
 
 
 @dataclass
@@ -38,7 +39,14 @@ class Map:
     def add_geodata(self, geojson_data: str, name: str = "default") -> None:
         self.update()
         folium.GeoJson(geojson_data).add_to(self.geojson_layer)
-        # self.geojson_layer.add_child(name=name)
+
+    def add_marker(self, coordinates: Coordinates, query: str) -> None:
+        self.update()
+        folium.Marker(
+            [coordinates.lat, coordinates.lon],
+            popup=query,
+        ).add_to(self.map)
+        self.map.fit_bounds([coordinates.lat, coordinates.lon])
 
     def save_map(self, path: str, type_: str = "html") -> None:
         with open(path, mode="w") as file:

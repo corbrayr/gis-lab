@@ -10,7 +10,9 @@ email_validator==2.2.0
 fastapi==0.115.6
 fastapi-cli==0.0.7
 folium==0.19.2
+geographiclib==2.0
 geopandas==1.0.1
+geopy==2.4.1
 h11==0.14.0
 httpcore==1.0.7
 httptools==0.6.4

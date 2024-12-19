@@ -11,15 +11,15 @@
     <div class="content col offcanvas-lg">
         <div class="input-container">
             <h1>GIS Application</h1>
-            <form action="/search_geo/" method="get">
+            <form action="/search_geo" method="post" id="search_geo">
                 <label for="userInput" class="form-label">Поиск места</label>
-                <input type="text" class="form-control" id="userInput" placeholder="Введите название места..." required>
-                <button type="submit" class="btn btn-primary w-100">Отправить</button>
+                <input type="text" class="form-control" id="userInput" name="user_query" placeholder="Введите название места..." required>
+                <button type="submit" class="btn btn-primary w-100" form="search_geo">Отправить</button>
             </form>
-            <form action="/upload_geojson/" method="post" enctype="multipart/form-data">
+            <form action="/upload_geojson" method="post" enctype="multipart/form-data" id="upload_geodata">
                 <label for="geojson_file" class="form-label">Отображение GeoJSON</label>
                 <input type="file" name="geojson_file" id="geojson_file" class="form-control" accept=".geojson" required>
-                <button type="submit" class="btn btn-primary w-100">Загрузить</button>
+                <button type="submit" class="btn btn-primary w-100" form="upload_geodata">Загрузить</button>
             </form>
         </div>
         <!-- Встраивание карты -->
